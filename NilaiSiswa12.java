@@ -5,7 +5,7 @@ public class NilaiSiswa12 {
        
         Scanner sc12 = new Scanner(System.in);
 
-int totalSiswa = 0, atasMean = 0, bawahMean = 0, i;
+int totalSiswa = 0, atasMean = 0, bawahMean = 0;
 double nilai = 0, totalNilai = 0, meanAkhir;
 String nama;
 boolean mayoritasNilai;
@@ -25,18 +25,16 @@ while (true) {
 
     totalSiswa ++;
     totalNilai += nilai;
-}
    
+        if (nilai >= 75) {
+            atasMean++;
+        } else {
+            bawahMean++;
+        }
+    } 
+
     if (totalSiswa > 0) {
         meanAkhir = totalNilai / totalSiswa;
-
-        for (i = 1; i <= totalSiswa; i++) {
-            if (nilai >= 75 && nilai > meanAkhir) {
-                atasMean++;
-            } else {
-                bawahMean++;
-            }
-        } 
 
     mayoritasNilai = atasMean > (totalSiswa / 2.0);
 
